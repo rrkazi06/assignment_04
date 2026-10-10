@@ -74,6 +74,7 @@ def add_gross_pay(payroll: pd.DataFrame) -> pd.DataFrame:
     )
     return out
 
+
 def add_pay_type(payroll: pd.DataFrame) -> pd.DataFrame:
     """Return a copy with one new column, `pay_type`: `classify_pay` for every row."""
     out = payroll.copy()
@@ -82,6 +83,7 @@ def add_pay_type(payroll: pd.DataFrame) -> pd.DataFrame:
         axis=1,
     )
     return out
+
 
 def build_payroll(timesheet: pd.DataFrame, employees: pd.DataFrame) -> pd.DataFrame:
     """The whole pipeline in one call: raw timesheet + raw roster -> payroll table.

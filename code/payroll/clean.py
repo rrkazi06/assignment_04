@@ -18,6 +18,7 @@ This step is walked through line by line in each docstring. The next two steps
 give you less.
 """
 
+
 import pandas as pd
 
 
@@ -58,10 +59,11 @@ def parse_hours(value) -> float:
     text = value.strip()
     if text == "":
         return 0.0
-    try:
-        return float(text)
-    except ValueError:
-        pass
+    if "h" not in text and "m" not in text:
+        try:
+            return float(text)
+        except ValueError:
+            return 0.0
     hours = 0.0
     for word in text.split():
         try:
